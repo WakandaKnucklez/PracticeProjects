@@ -5,10 +5,10 @@ A lightweight task management application built with Python, designed to help or
 ## What It Can Do
 
 - **Task Management:** Add new tasks to your personal task list.
-- **Editing:** Update task descriptions whenever plans change.
+- **Editing:** Update task status (not done, working, done).
 - **Deletion:** Remove tasks that are no longer needed.
 - **Progress Tracking:** Change task statuses to reflect their current state.
-- **Update Tracking:** Keep a record of when each task was last modified.
+- **Update Tracking:** Keep a record of when each task was last edited.
 - **Persistent Data:** Store task information in a JSON file, allowing it to be loaded again when the application is reopened.
 
 ## Under the Hood
