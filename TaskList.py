@@ -16,11 +16,12 @@ def save_data():
 
 tasks = load_data()
 
+
 while True:
     
     desc = tasks["task"]["description"]
     for key, value in desc.items():
-                    print(f"Youre tasks: {key} : {value}")
+        print(f"Youre tasks: {key} : {value}")
     new_task = input("What task do you want to add today (delete to delete/ edit to edit): ").lower()
 
     if new_task != "delete" and new_task != "edit" and new_task != "":
@@ -48,6 +49,23 @@ while True:
 
     if new_task == "edit":
         edit_task = input("What task do you want to edit (status edit to edit status only): ").lower()
+        if edit_task == "status edit":
+            change_status = input("Which task do you want to change status: ").lower()
+                    
+            if change_status in desc:
+                desc[change_status] = None
+                task_status = input("Enter task status (not done/ working/ done): ").lower()
+                desc[change_status] = task_status
+                if task_status != "not done" and task_status != "working" and task_status != "done":
+                    while True:
+                        print("incorrect status operative")
+                        task_status = input("Enter task status (not done/ working/ done): ").lower()
+                        if task_status == "not done":
+                            break
+                        elif task_status == "working":
+                            break
+                        elif task_status == "done":
+                            break
         if edit_task in desc:
             new_text = input("New task: ").lower()
             new_status = input("Enter task status (not done/ working/ done): ").lower()
@@ -94,23 +112,6 @@ while True:
                             save_data()
                             break
 
-        elif edit_task == "status edit":
-            change_status = input("Which task do you want to change status: ").lower()
-            
-            if change_status in desc:
-                desc[change_status] = None
-                task_status = input("Enter task status (not done/ working/ done): ").lower()
-                desc[change_status] = task_status
-                if task_status != "not done" and task_status != "working" and task_status != "done":
-                    while True:
-                        print("incorrect status operative")
-                        task_status = input("Enter task status (not done/ working/ done): ").lower()
-                        if task_status == "not done":
-                            break
-                        elif task_status == "working":
-                            break
-                        elif task_status == "done":
-                            break
             while change_status not in desc:
                 print("Operative not in list!")
                 change_status = input("Which task do you want to change status: ").lower()
