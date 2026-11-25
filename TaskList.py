@@ -19,8 +19,9 @@ tasks = load_data()
 while True:
     
     desc = tasks["task"]["description"]
+    for key, value in desc.items():
+                    print(f"Youre tasks: {key} : {value}")
     new_task = input("What task do you want to add today (delete to delete/ edit to edit): ").lower()
-
 
     if new_task != "delete" and new_task != "edit" and new_task != "":
         task_status = input("Enter task status (not done/ working/ done): ").lower()
