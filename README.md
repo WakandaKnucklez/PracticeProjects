@@ -20,7 +20,7 @@ The project uses Python's built-in libraries to handle data storage and date tra
 | Python | Main programming language |
 | JSON | Task data storage |
 | Datetime | Update date tracking |
-| SYS | A Library I used so I can quick the code |
+| SYS | A Library I used so I can quit (sys.exit()) the code |
 
 ## Getting Started
 
